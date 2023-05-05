@@ -81,9 +81,9 @@ WSGI_APPLICATION = "Films.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_DRIVER', 'django.db.backends.postgresql'),
-        'NAME': os.environ.get('PG_DB', 'postgres'),
+        'NAME': os.environ.get('PG_DB', 'filmsdb'),
         'USER': os.environ.get('PG_USER', 'postgres'),
-        'PASSWORD': os.environ.get('PG_PASSWORD', 'postgres'),
+        'PASSWORD': os.environ.get('PG_PASSWORD', '1234'),
         'HOST': os.environ.get('PG_HOST', 'localhost'),
         'PORT': os.environ.get('PG_PORT', '5432'),
     }
