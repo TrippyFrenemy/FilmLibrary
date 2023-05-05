@@ -1,5 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
 <!--About page with url about-->
 <%{% block content %}
-    <h1>About</h1>
+    <div class="container py-5">
+        <div class="row mt-5">
+            <div class="col-10 mx-auto col-md-6 my-3">
+                <a href="https://t.me/TrippyVonFrenemy"><img src="{% static "photo_2023-05-05_16-40-22.jpg" %}" width="300" height="300"></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 mx-auto col-md-6 my-3">
+        <div>
+            <h1 class="product_title">IPZ22 Avrushchenko Dmytro</h1>
+            <p class="product_desc">Project Description</p>
+            <p class="text-justify product_text">This a project for university</p>
+            <p class="text-justify product_text">Implementation of an application that will describe the films and the actors who are filmed in them</p>
+        </div>
+    </div>
 {% endblock %}
