@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+<!--Home page with url home-->
+{% block content %}
+
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 mx-auto my-2 text-center">
+                    <h1 class="text-capitalize font-weight-bold">
+                        Films
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for film in films %}
+                <div class="col-9 mx-auto col-md-6 col-lg-3">
+                    <div class="card mb-4">
+                        <div class="p-4">
+                            <a href="{{ film.get_url }}"><img class="card-img-top" src="{{ film.image.url }}" alt="{{ film.name }}" width="250" height="370"></a>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between" style="background: transparent; border-color: transparent;">
+                            <a href="{{ film.get_url }}"><p class="font-weight-bold mb-0">{{ film.name }}</p></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
