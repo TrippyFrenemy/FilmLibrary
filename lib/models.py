@@ -37,6 +37,9 @@ class Film(models.Model):
     def get_url(self):
         return reverse("film_detail", args=[self.category.slug, self.slug])
 
+    def get_summary(self):
+        return self.description[:80] + " ..."
+
     def __str__(self):
         return self.name
 

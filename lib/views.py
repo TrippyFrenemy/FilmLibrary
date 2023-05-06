@@ -22,4 +22,10 @@ def about(request):
 
 
 def film_detail(request, category_slug=None, film_slug=None):
-    pass
+    try:
+        film = Film.objects.get(category__slug=category_slug, slug=film_slug)
+    except Exception as ex:
+        raise ex
+    return render(request, "film.html", dict(
+        film=film
+    ))
