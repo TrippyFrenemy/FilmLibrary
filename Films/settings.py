@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "embed_video",
     "lib",
-    "crispy_forms",
-    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
