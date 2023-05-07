@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from embed_video.fields import EmbedVideoField
+
 
 
 class Category(models.Model):
@@ -25,6 +27,7 @@ class Film(models.Model):
     description = models.TextField(blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='film', blank=True)
+    trailer = EmbedVideoField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
