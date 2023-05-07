@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load embed_video_tags %}
 {% load static %}
 <!--About page with url about-->
 <%{% block content %}
@@ -14,6 +15,12 @@
             <h1 class="product_title">{{ film.name }}</h1>
             <p class="product_desc">Film Description</p>
             <p class="text-justify product_text">{{ film.description }}</p>
+            <br/>
+            <br/>
+            <br/>
+            <h1 class="product_title">Trailer</h1>
+            {% video film.trailer %}
         </div>
     </div>
+
 {% endblock %}
