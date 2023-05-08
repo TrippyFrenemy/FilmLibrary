@@ -77,13 +77,24 @@ WSGI_APPLICATION = "Films.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.environ.get('DB_DRIVER', 'django.db.backends.postgresql'),
+#         'NAME': os.environ.get('PG_DB', 'filmsdb'),
+#         'USER': os.environ.get('PG_USER', 'postgres'),
+#         'PASSWORD': os.environ.get('PG_PASSWORD', '1234'),
+#         'HOST': os.environ.get('PG_HOST', 'localhost'),
+#         'PORT': os.environ.get('PG_PORT', '5432'),
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_DRIVER', 'django.db.backends.postgresql'),
-        'NAME': os.environ.get('PG_DB', 'filmsdb'),
-        'USER': os.environ.get('PG_USER', 'postgres'),
-        'PASSWORD': os.environ.get('PG_PASSWORD', '1234'),
-        'HOST': os.environ.get('PG_HOST', 'localhost'),
+        'NAME': os.environ.get('PG_DB', 'ddsrvln5tqfipo'),
+        'USER': os.environ.get('PG_USER', 'lwdfaglqenxiuf'),
+        'PASSWORD': os.environ.get('PG_PASSWORD', '476c5501490889f23f261b2f0806812507063f5380943e5d9dcfa5b504e9b3c6'),
+        'HOST': os.environ.get('PG_HOST', 'ec2-54-77-120-158.eu-west-1.compute.amazonaws.com'),
         'PORT': os.environ.get('PG_PORT', '5432'),
     }
 }

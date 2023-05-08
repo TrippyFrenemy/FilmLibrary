@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Film, Actor
+from .models import Category, Film
 
 # Create your views here.
 def home(request, category_slug=None):
