@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, Film
 
 # Create your views here.
@@ -29,3 +29,15 @@ def film_detail(request, category_slug=None, film_slug=None):
     return render(request, "film.html", dict(
         film=film
     ))
+
+
+def search(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        try:
+            film = Film.objects.get(name=searched)
+            return film_detail(request, film.category.slug, film.slug)
+        except Exception as ex:
+            print(ex)
+    return home(request)
+
