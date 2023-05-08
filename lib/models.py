@@ -26,7 +26,7 @@ class Film(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
     description = models.TextField(blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='film', blank=True)
+    image = models.URLField(blank=True)
     trailer = EmbedVideoField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
