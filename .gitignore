@@ -5,6 +5,7 @@ db.sqllite3
 *.pot
 *.pyc
 static/admin
+media
 variant
 venv
 .env
