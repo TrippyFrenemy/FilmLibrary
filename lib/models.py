@@ -45,19 +45,3 @@ class Film(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Actor(models.Model):
-    name = models.CharField(max_length=250, unique=True)
-    slug = models.SlugField(max_length=250, unique=True)
-
-    class Meta:
-        ordering = ("name",)
-        verbose_name = "actor"
-        verbose_name_plural = "actors"
-
-    def get_url(self):
-        return reverse("actor_detail", args=[self.slug])
-
-    def __str__(self):
-        return self.name
