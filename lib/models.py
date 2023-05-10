@@ -7,7 +7,6 @@ from embed_video.fields import EmbedVideoField
 class Category(models.Model):
     name = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
-    description = models.TextField(blank=True)
 
     class Meta:
         ordering = ("name", )
@@ -26,7 +25,7 @@ class Film(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
     description = models.TextField(blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.URLField(blank=True)
+    image = models.TextField(blank=True)
     trailer = EmbedVideoField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -39,25 +38,6 @@ class Film(models.Model):
 
     def get_url(self):
         return reverse("film_detail", args=[self.category.slug, self.slug])
-
-    def get_summary(self):
-        return self.description[:80] + " ..."
-
-    def __str__(self):
-        return self.name
-
-
-class Actor(models.Model):
-    name = models.CharField(max_length=250, unique=True)
-    slug = models.SlugField(max_length=250, unique=True)
-
-    class Meta:
-        ordering = ("name",)
-        verbose_name = "actor"
-        verbose_name_plural = "actors"
-
-    def get_url(self):
-        return reverse("actor_detail", args=[self.slug])
 
     def __str__(self):
         return self.name
