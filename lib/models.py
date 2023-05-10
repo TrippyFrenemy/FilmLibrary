@@ -3,7 +3,6 @@ from django.urls import reverse
 from embed_video.fields import EmbedVideoField
 
 
-
 class Category(models.Model):
     name = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
