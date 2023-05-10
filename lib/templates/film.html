@@ -1,1 +1,26 @@
-1234
+{% extends "base.html" %}
+{% load embed_video_tags %}
+{% load static %}
+<!--About page with url about-->
+<%{% block content %}
+    <div class="container py-5">
+        <div class="row mt-5">
+            <div class="col-10 mx-auto col-md-6 my-3">
+                <img src="{{ film.image }}">
+            </div>
+        </div>
+    </div>
+    <div class="col-10 mx-auto col-md-6 my-3">
+        <div class="custom_div">
+            <h1 class="product_title">{{ film.name }}</h1>
+            <p class="product_desc">Film Description</p>
+            <p class="text-justify product_text">{{ film.description }}</p>
+            <br/>
+            <br/>
+            <br/>
+            <h1 class="product_title">Trailer</h1>
+            {% video film.trailer %}
+        </div>
+    </div>
+
+{% endblock %}
